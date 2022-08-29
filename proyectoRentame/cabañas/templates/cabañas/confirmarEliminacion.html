@@ -1,0 +1,35 @@
+{%extends "contenido/encabezado.html"%}
+
+{% block contenido %}
+
+<br><br>
+<center>
+<form method="POST">
+    {% csrf_token %}
+    <div class="card"style="background-color: rgba(120, 201, 248, 0.74); width: 500px; height: 110px;" >
+        <h3>Eliminar Opinión</h3>
+        <p>
+            ¿Esta seguro de eliminar esta Opinión?
+        </p>
+    </div>
+    <button type="submit" class="btn btn-danger">Si</button>
+    <a href="{% url 'Opiniones' %}" class="btn btn-primary">Cancelar</a>
+    
+</form>
+</center>
+</br>   
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+{% endblock %}

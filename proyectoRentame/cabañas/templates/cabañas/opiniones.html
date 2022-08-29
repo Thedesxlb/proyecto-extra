@@ -1,0 +1,87 @@
+{%extends "contenido/encabezado.html"%}
+
+{% block titulo %} Opiniones {% endblock %}
+
+{% block contenido %}
+
+
+
+<div class="bg-dark m-auto mt-5 " style="width: 500px ;">
+    <div class=" col">
+    <h2 class="text-white text-center text-decoration-underline"><b>Contacto - Cabañas Los Castores </b></h2>
+    <h2 class="text-warning text-center "><b>Cabañas de Lujo</b></h2>
+    </div>
+</div>
+
+</br> 
+</br> 
+</br> 
+</br> 
+
+<div class="container bg-dark col-6">
+    <h3 class="text-warning text-center text-decoration-underline"><b>Información de Contacto </b></h3>
+    <p class="text-warning"style="text-align: justify;"><b>En Las cabañas Los Castores nos encantará contar con el honor de su visita, para atenderle
+        con una mejor calidad, le sugerimos contactar a nuestro personal de reservaciones, para conocer sus inquietudes y 
+        estar en condiciones de cumplir sus expectativas.</b></p>
+</div>
+
+  
+ <div class="container py-4">
+    <div class="row">
+        <div class="">
+            
+            <div class="container col-5">
+                <div class="row align-items-center">
+                    <td><a href="{% url 'RegistrarOpinion'%}" class="btn btn-warning mb-4 ">Agrega alguna Opinión</a></td>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre del Cliente</th>
+                            <th>Cabaña</th>
+                            <th>Opinión</th>
+                            <th>Editar Opinión</th>
+                            <th>Eliminar Opinión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                        {% for duda in dudas %}
+                        <tr>
+                            <td class="text-center">  
+                                <img src="{{duda.imagenOp.url}}" alt="" class="img-media" width="100px">
+                            </td>
+                            <td class="muted">{{duda.nombreClien}}</td>
+                            <td class="muted">{{duda.nombreCabaña}}</td>
+                            <td class="muted">{{duda.duda}}</td>
+                            <td><a href="{% url 'ConsultarDuda' duda.id %}" class="btn btn-info">Editar</a></td>
+                            <td><a href="{% url 'EliminarDuda' duda.id %}" class="btn btn-danger">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>   
+            </div>        
+        </div>
+    </div>
+</div>  
+
+
+
+
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+    
+{% endblock %}
+
+
