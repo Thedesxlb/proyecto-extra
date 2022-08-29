@@ -1,0 +1,33 @@
+{%extends "contenido/encabezado.html"%}
+
+{% block contenido %}
+
+</br>
+
+<div class="card bg-dark  m-auto mt-5" style="width: 500px ;">
+<form class="form-horizontal m-5"  action="{% url 'EditarDuda' duda.id %}" method="POST" role="form">
+    {%csrf_token%}
+                <div class="mb-3 text-white">
+                    <label class="form-label">Edita tu Opinión aquí Por favor</label>
+                    <textarea class="form-control" name="duda" rows="3" >{{duda.duda}}</textarea>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-primary m-auto">
+                <a href="{% url 'Opiniones' %}" class="btn btn-primary">Cancelar</a>
+           
+</form>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<!-- /Alert -->
+
+{% endblock %}

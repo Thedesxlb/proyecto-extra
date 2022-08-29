@@ -1,0 +1,52 @@
+{%extends "contenido/encabezado.html"%}
+
+{% block titulo %} RegistrarOpinion {% endblock %}
+
+{% block contenido %}
+
+<br>
+<br>
+<div class="card  container">
+    <div class="row-4">
+        <form class="form-horizontal" action="{% url 'RegistrarOpinion'%}" enctype="multipart/form-data" method="POST" role="form">
+            {%csrf_token%}
+        <div class="col-md-5">
+            <h1>Opiniones</h1>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombreClien" class="form-control"  placeholder="Alberto Vega">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cabaña</label>
+            <input type="text" name="nombreCabaña" class="form-control" placeholder="Cabaña">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Opiniones</label>
+            <textarea class="form-control" name="duda" rows="3" placeholder="Escribe aquí tus Opiniones"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label text-right">Agregar Foto:</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" name="imagenOp" />
+            </div>
+        </div></br>
+
+        <div class="form-actions text-right">
+            <input type="submit" value="Enviar" class="btn btn-outline-dark">
+        </div></br>
+        <a href="{% url 'Opiniones' %}" class="btn btn-primary">Cancelar</a>
+        </form>
+    </div>
+    <br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

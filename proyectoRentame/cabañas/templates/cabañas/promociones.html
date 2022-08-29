@@ -1,0 +1,38 @@
+{%extends "contenido/encabezado.html"%}
+
+
+{% block contenido %}
+
+</br>
+<div class="container card  bg-dark page-header col-5 py-4" >
+    <div class="bg-dark col">
+    <h3 class="text-white text-center">Todo el Mes de <b>Agosto </b>disfruta de estas super promociones en</h3>
+    <h2 class="text-warning text-center text-decoration-underline"><b>Cabañas de Lujo</b></h2>
+    </div>
+</div>
+
+
+<div class="container page-header col-12 py-4" style="display: flex; flex-direction: row; flex-wrap: wrap ">
+    {% for promocion in promociones%}
+    
+    <div class="card" style="width: 25rem; margin: 10px">
+        <img src="{{promocion.imagenPromo.url}}" class="card-img-top" > 
+        <div class="card-body">
+          <div >
+            <h4 class="card-title text-center text-uppercase">{{promocion.nombrePromo}}</h4>
+        </div>
+        <h3 class="card-title text-center text-warning">{{promocion.costoPromo}}</h3>
+        <p class="card-text"style="text-align: justify;" >{{promocion.descripcionPromo}}</p>
+    </div>
+</div>
+{%endfor%} 
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+ 
+{% endblock %}
+
+

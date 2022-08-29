@@ -1,0 +1,44 @@
+{%extends "contenido/encabezado.html"%}
+
+{% block titulo %} Catalogo {% endblock %}
+
+{% block contenido %}
+
+</br>
+<div class="bg-dark container col-5 py-4 ">
+    <div class="col">
+    <h3 class="text-white text-center text-decoration-underline"><b>MODELOS Y TARIFAS </b></h3> 
+    </div>
+    <h4 class="text-warning text-center"><b>En Cabaños Los Castores para su comodidad y elección hemos diseñado cuatro modelos de cabañas:</b></h4>
+</div>
+</br>
+</br>
+
+<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap">
+{% for catalogos in catalogo%}
+
+    <div class="card" style="width: 18rem; margin: 10px">
+        <img src="{{catalogos.imagen.url}}" class="card-img-top" >
+        <div class="card-body">
+          {% comment %} <div style="display: flex; flex-direction: row">
+        </div> {% endcomment %}
+        <h5 class="card-title text-center">{{catalogos.nombre}}</h5>
+        <h3 class="card-title text-center">{{catalogos.costo}}</h3>
+        <p class="card-text" style="text-align: justify;">{{catalogos.descripcion}}</p>
+        <p class="card-title text-center text-danger">{{catalogos.personas}}</´p>
+        <p class="card-title"style="text-align: justify;">{{catalogos.camas}}</p>
+    </div>
+</div>
+{%endfor%} 
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+            
+{% endblock %}
+
+
